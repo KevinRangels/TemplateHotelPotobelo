@@ -28,13 +28,54 @@ header{
 }
 header .grid-container{
 	display: grid;
-	grid-template-columns: 2fr 6fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 3fr 5fr 1fr 1fr 1fr 1fr;
 }
 header .grid-item{
-	background-color: silver;
-	border: 2px solid white;
 	text-align: center;
-	height: 70px;
+}
+header .bloqueReservas{
+	position: relative;
+}
+header .bloqueReservas .campana-y-reserva{
+	background: #FFFBEE;
+	cursor: pointer;
+}
+header .bloqueReservas .fa-concierge-bell{
+	font-size: 25px;
+	color: #847059;
+}
+header .bloqueReservas .fa-caret-down, header .bloqueReservas .fa-caret-up{
+	font-size: 25px;
+	color: #236AA1;
+}
+header .formReservas{
+	position: absolute;
+	top: 52px;
+	width: 300px;
+	height: auto;
+	left: 0px;
+	z-index: 2;
+	background: rgba(0, 83, 174, .8);
+}
+header .formReservas .input-group-lg input, header .formReservas select{
+	font-size: 14px;
+}
+header .formReservas input[type="button"]{
+	background: black;
+	font-size: 16px;
+}
+header .fa-user{
+	font-size: 25px;
+	color: #DFDAD4;
+	cursor: pointer;
+}
+header .idiomas span{
+	cursor: pointer;
+}
+header .botonMenu i{
+	font-size: 30px;
+	color: #B5a99B;
+	cursor: pointer;
 }
 /*=============================================
 MENU
