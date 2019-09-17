@@ -23,6 +23,9 @@
 
     <!-- Bootstrap datepicker -->
     <link rel="stylesheet" href="css/plugins/bootstrap-datepicker.standalone.min.css">
+  
+    <!-- JDSLIDER -->
+    <link rel="stylesheet" href="css/plugins/jquery.jdSlider.css">
 
     <!-- Hoja de estilos -->
     <link rel="stylesheet" href="css/style.css">
@@ -45,6 +48,15 @@
 
    <!-- Bootstrap datepicker -->
    <script src="js/plugins/bootstrap-datepicker.min.js"></script>
+
+   <!-- EASING -->
+   <script src="js/plugins/jquery.easing.js"></script>
+
+   <!-- SCROLL UP -->
+   <script src="js/plugins/scrollUP.js"></script>
+  
+   <!-- JDSLIDER -->
+   <script src="js/plugins/jquery.jdSlider-latest.js"></script>
 
     
 </head>
@@ -121,7 +133,7 @@ HEADER
       <!-- SELECCION DE IDIOMA -->
       <div class="grid-item d-none d-lg-block mt-1 idiomas">
         <span class="border border-info float-left p-1 bg-info text-white idiomaEs">ES</span>
-        <span class="border border-info float-left p-1 bg-white text-dark idiomaEn">ES</span>
+        <span class="border border-info float-left p-1 bg-white text-dark idiomaEn">EN</span>
       </div>
       <!-- MENU HAMBURHESA -->
       <div class="grid-item mt-1 mt-sm-3 mt-md-4 mt-lg-2 botonMenu">
@@ -132,41 +144,315 @@ HEADER
   </div>
 </header>
 <!--=============================
+MENU       
+==============================-->
+<nav class="menu container-fluid p-0">
+  <ul class="nav nav-justified py-2">
+
+    <li class="nav-item">
+      <a href="#planes" class="nav-link text-white">Planes</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#habitaciones" class="nav-link text-white">Habitaciones</a>
+    </li>
+    
+    <li class="nav-item">
+      <a href="#pueblo" class="nav-link text-white">El puebo</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#restaurante" class="nav-link text-white">Restaurante</a>
+    </li>
+    
+    <li class="nav-item">
+      <a href="#contactenos" class="nav-link text-white">Contáctenos</a>
+    </li>
+
+    <li class="nav-item">
+      <ul class="my-2 py-1">
+        <li>
+          <a href="" target="_blank">
+            <i class="fab fa-facebook-f text-white float-left mx-2"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="" target="_blank">
+            <i class="fab fa-twitter text-white float-left mx-2"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="" target="_blank">
+            <i class="fab fa-youtube text-white float-left mx-2"></i>
+          </a>
+        </li>
+
+        <li>
+          <a href="" target="_blank">
+            <i class="fab fa-instagram text-white float-left mx-2"></i>
+          </a>
+        </li>
+
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+<!--=============================
+MENU MOVIL   
+==============================-->
+<div class="menuMovil">
+	
+    <div class="row">
+      
+      <div class="col-6">
+        
+        <a href="#modalIngreso" data-toggle="modal">
+          <i class="fas fa-user lead ml-3 mt-4"></i>
+        </a>
+  
+      </div>	
+  
+      <div class="col-6">
+        
+        <div class="float-right mr-3 mt-3 mr-sm-5 mt-sm-4">
+          
+          <span class="border border-info float-left p-1 bg-info text-white idiomaEs">ES</span>
+          <span class="border border-info float-left p-1 bg-white text-dark idiomaEn">EN</span>
+  
+        </div>	
+  
+      </div>	
+  
+    </div>
+  
+    <div class="formReservas py-1 py-lg-2 px-4">
+            
+      <div class="form-group my-4">
+        <select class="form-control form-control-lg">
+          <option>Tipo de habitación</option>
+          <option>Suite</option>
+          <option>Especial</option>
+          <option>Standar</option>
+        </select>
+      </div>
+  
+      <div class="form-group my-4">
+        <select class="form-control form-control-lg">
+          <option>Temática de habitación</option>
+          <option>Oriental</option>
+          <option>Contemporánea</option>
+          <option>Africana</option>
+          <option>Clásica</option>
+          <option>Retro</option>
+        </select>
+      </div>
+  
+      <div class="row">
+        
+         <div class="col-6 input-group input-group-lg pr-1">
+        
+          <input type="text" class="form-control datepicker entrada" placeholder="Entrada">
+  
+          <div class="input-group-append">
+            
+            <span class="input-group-text p-2">
+              <i class="far fa-calendar-alt small text-gray-dark"></i>
+            </span>
+          
+          </div>
+  
+        </div>
+  
+        <div class="col-6 input-group input-group-lg pl-1">
+        
+          <input type="text" class="form-control datepicker salida" placeholder="Salida">
+  
+          <div class="input-group-append">
+            
+            <span class="input-group-text p-2">
+              <i class="far fa-calendar-alt small text-gray-dark"></i>
+            </span>
+          
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <input type="button" class="btn btn-block btn-lg my-4 text-white" value="Ver disponibilidad">
+      
+    </div>
+  
+    <ul class="nav flex-column mt-4 pl-4 mb-5">
+      
+      <li class="nav-item">
+        <a class="nav-link text-white my-2" href="#planesMovil">Planes</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link text-white my-2" href="#habitaciones">Habitaciones</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link text-white my-2" href="#pueblo">Recorrido por el pueblo</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link text-white my-2" href="#restaurante">Restaurante</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link text-white my-2" href="#contactenos">Contáctenos</a>
+      </li>
+  
+    </ul>
+  
+  </div>
+<!--=============================
 BANNER        
 ==============================-->
-<div class="banner container-fluid p-0"></div>
+<div class="banner container-fluid p-0">
+	
+	<div class="jd-slider fade-slider">
+		
+		<div class="slide-inner">
+			
+			<ul class="slide-area">
+				
+				 <li>					
+                    <img src="img/banner01.jpg" width="100%">
+                </li>
+
+                <li>              	
+                    <img src="img/banner02.jpg" width="100%">
+                </li>
+
+                <li>               	
+                    <img src="img/banner03.jpg" width="100%">
+                </li>
+
+                <li>               	
+                    <img src="img/banner04.jpg" width="100%">
+                </li>
+
+			</ul>
+
+		</div>
+
+	 	<div class="controller d-none">
+		 	
+			<a class="auto" href="#">
+
+                <i class="fas fa-play fa-xs"></i>
+                <i class="fas fa-pause fa-xs"></i>
+
+            </a>
+
+            <div class="indicate-area"></div>
+
+	 	</div>
+
+	 	<div class="verMas text-center bg-white rounded-circle d-none d-lg-block" vinculo="#planes">
+    
+    		<i class="fas fa-chevron-down"></i>	
+
+    	</div>
+
+	</div>
+
+</div>
+
+
 <!--=============================
 PLANES        
 ==============================-->
-<div class="planes container-fluid p-0 bg-white">
+<div class="planes container-fluid p-0 bg-white" id="planes">
   <div class="container p-0">
     <div class="grid-container">
-      <div class="grid-item">1</div>
-      <div class="grid-item d-none d-lg-block">2</div>
-      <div class="grid-item d-none d-lg-block">3</div>
-      <div class="grid-item d-none d-lg-block">4</div>
-      <div class="grid-item d-none d-lg-block">5</div>
+      
+      <div class="grid-item">
+        <h1 class="tituloPlan text-center py-3 py-lg-5" tituloPlan="BIENVENIDO">Bienvenido</h1>
+        <p class="text-muted text-left px-4 descripcionPlan" descripcionPlan="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa cumque sed modi molestias quam ipsam vel omnis, asperiores qui optio minus nihil libero,   nostrum, hic tenetur corporis cum tempore illo.">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa cumque sed
+           modi molestias quam ipsam vel omnis, asperiores qui optio minus nihil libero,
+            nostrum, hic tenetur corporis cum tempore illo.</p>
+      </div>
+
+      <div class="grid-item d-none d-lg-block" data-toggle="modal" data-target="#modalPlanes">
+        <figure class="text-center">
+          <h1 descripcion="DESCRIPCION DEL PLAN SELECCIONADO">PLAN ROMANTICO</h1>
+        </figure>
+        <img src="img/plan-romantico.png" class="img-fluid" width="100%" alt="">
+      </div>
+
+      <div class="grid-item d-none d-lg-block" data-toggle="modal" data-target="#modalPlanes">
+        <figure class="text-center">
+          <h1 descripcion="DESCRIPCION DEL PLAN SELECCIONADO">PLAN LUNA DE MIEL</h1>
+        </figure>
+        <img src="img/luna-de-miel.png" class="img-fluid" width="100%" alt="">
+      </div>
+
+      <div class="grid-item d-none d-lg-block" data-toggle="modal" data-target="#modalPlanes">
+        <figure class="text-center">
+          <h1 descripcion="DESCRIPCION DEL PLAN SELECCIONADO">PLAN AVENTURA</h1>
+        </figure>
+        <img src="img/plan-aventura.png" class="img-fluid" width="100%" alt="">
+      </div>
+
+      <div class="grid-item d-none d-lg-block" data-toggle="modal" data-target="#modalPlanes">
+        <figure class="text-center">
+          <h1 descripcion="DESCRIPCION DEL PLAN SELECCIONADO">PLAN SPA</h1>
+        </figure>
+        <img src="img/plan-spa.png" class="img-fluid" width="100%" alt="">
+      </div>
     </div>
   </div>
 </div>
 <!--=============================
 HABITACIONES        
 ==============================-->
-<div class="habitaciones container-fluid p-0 bg-light">
+<div class="habitaciones container-fluid p-0 bg-light" id="habitaciones">
   <div class="container">
       <h1 class="pt-4 text-center">HABITACIONES</h1>
       <div class="row p-4 text-center">
 
         <div class="col-12 col-lg-4 pb-3 px-0 px-lg-3">
-            <main>1</main>
+            <a href="habitaciones.html">
+              <figure class="text-center">
+                <img src="img/habitacion01.png" class="img-fluid" width="100%" alt="">
+                <p class="small py-4 px-1 px-lg-0 mb-0">Lorem ipsum dolor sit amet consectetur.</p>
+                <h3 class="py-2 text-gray-dark mb-0">DESDE $300 USD</h3>
+                <h5 class="py-2 text-gray-dark border">Ver detalles <i class="fas fa-chevron-right ml-2"></i></h5>
+                <h1 class="text-white p-3 mx-auto w-50 lead" style="background:#847059">SUITE</h1>
+              </figure>
+            </a>
         </div>
 
         <div class="col-12 col-lg-4 pb-3 px-0 px-lg-3">
-            <main>2</main>
+            <a href="habitaciones.html">
+              <figure class="text-center">
+                <img src="img/habitacion02.png" class="img-fluid" width="100%" alt="">
+                <p class="small py-4 px-1 px-lg-0 mb-0">Lorem ipsum dolor sit amet consectetur.</p>
+                <h3 class="py-2 text-gray-dark mb-0">DESDE $300 USD</h3>
+                <h5 class="py-2 text-gray-dark border">Ver detalles <i class="fas fa-chevron-right ml-2"></i></h5>
+                <h1 class="text-white p-3 mx-auto w-50 lead" style="background:#197DB1">ESPECIAL</h1>
+              </figure>
+            </a>
         </div>
 
         <div class="col-12 col-lg-4 pb-3 px-0 px-lg-3">
-            <main>3</main>
+           <a href="habitaciones.html">
+              <figure class="text-center">
+                <img src="img/habitacion03.png" class="img-fluid" width="100%" alt="">
+                <p class="small py-4 px-1 px-lg-0 mb-0">Lorem ipsum dolor sit amet consectetur.</p>
+                <h3 class="py-2 text-gray-dark mb-0">DESDE $300 USD</h3>
+                <h5 class="py-2 text-gray-dark border">Ver detalles <i class="fas fa-chevron-right ml-2"></i></h5>
+                <h1 class="text-white p-3 mx-auto w-50 lead" style="background:#2F7D84">ESTANDAR</h1>
+              </figure>
+            </a>
         </div>
 
       </div>
@@ -175,16 +461,77 @@ HABITACIONES
 <!--=============================
 PLANES MOVIL        
 ==============================-->
-<div class="d-block d-lg-none planesMovil bg-white">
-  <h1 class="text-center py-3">PLANES</h1>
-  <div class="grid-container px-5">
-    <div class="grid-item">1</div>
-  </div>
+<div class="d-block d-lg-none planesMovil jd-slider bg-white" id="planesMovil">
+
+	<h1 class="text-center py-3">PLANES</h1>
+
+	 <div class="slide-inner">
+	 	
+		 <ul class="slide-area">
+		 	
+			<li>
+				
+				<a href="#modalPlanes" data-toggle="modal" descripcion="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas suscipit quis eligendi voluptatibus dolore libero quasi delectus odit impedit optio eius corporis cumque numquam aliquid repudiandae quisquam dolor explicabo, totam.">
+					
+					<img src="img/plan-romantico.png">
+					<h6 class="py-2 text-center">ROMÁNTICO</h6>
+
+				</a>
+
+			</li>
+
+			<li>
+				
+				<a href="#modalPlanes" data-toggle="modal" descripcion="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat dicta fugiat nihil amet officiis, atque molestiae velit, quod repudiandae asperiores illum accusantium ullam, necessitatibus excepturi inventore, mollitia est vitae impedit.">
+          <img src="img/luna-de-miel.png">
+          <h6 class="py-2 text-center">LUNA DE MIEL</h6>
+        </a>
+
+			</li>
+
+			<li>
+				
+			  	<a href="#modalPlanes" data-toggle="modal" descripcion="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt blanditiis nulla expedita nostrum vero. Laborum repudiandae numquam mollitia earum natus ut delectus quas, iste unde doloribus suscipit qui, voluptate perspiciatis.">
+            <img src="img/plan-aventura.png">
+            <h6 class="py-2 text-center">AVENTURA</h6>
+          </a>
+
+			</li>
+
+			<li>
+				
+			  <a href="#modalPlanes" data-toggle="modal" descripcion="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quibusdam magni atque provident, quaerat libero harum possimus. Illum iure magni voluptate, quos amet! Ipsam, sit, sapiente. Cumque est officiis in!">
+          <img src="img/plan-spa.png">
+          <h6 class="py-2 text-center">SPA</h6>
+        </a>
+
+			</li>
+
+
+		 </ul>
+
+	 	<a class="prev" href="#">
+            <i class="fas fa-angle-left text-muted"></i>
+        </a>
+
+        <a class="next" href="#">
+            <i class="fas fa-angle-right text-muted"></i>
+        </a>
+
+ 	</div>
+
+  	<div class="controller">
+
+        <div class="indicate-area"></div>
+
+    </div>
+			   
 </div>
+
 <!--=============================
 RECORRIDO POR EL PUEBLO
 ==============================-->
-<div class="recorridoPueblo container-fluid bg-white">
+<div class="recorridoPueblo container-fluid bg-white" id="pueblo">
   <div class="container">
     <h1 class="pt-5 text-center">RECORRIDO POR EL PUEBLO</h1>
     <div class="grid-container">
@@ -200,7 +547,7 @@ RESTAURANTE
 <div class="fondoRestaurante container-fluid bg-dark">
 
 </div>
-<div class="restaurante container-fluid pt-5">
+<div class="restaurante container-fluid pt-5" id="restaurante">
   <div class="container">
     <div class="grid-container">
       <div class="grid-item d-none d-lg-block">
@@ -480,6 +827,42 @@ VENTANAS MODAL REGISTRO
       </div>
     </div>
   </div>
+  <!--=====================================
+VENTANA MODAL PLANES
+======================================-->
+
+<div class="modal" id="modalPlanes">
+	
+  <div class="modal-dialog">
+     
+   <div class="modal-content">
+     
+         <div class="modal-header">
+           <h4 class="modal-title"></h4>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
+     
+      <div class="modal-body">
+            
+            <img src="" class="img-thumbnail">
+         
+         <p class="py-3"></p>
+            
+            <div class="text-center">
+             <a href="habitaciones.html" class="btn btn-primary text-center">Separa tu habitación</a>
+           </div>
+
+         </div>
+
+        <div class="modal-footer">
+           <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+         </div>
+
+   </div> 	
+
+  </div>
+
+</div>
 
     <script src="js/script.js"></script>
 </body>
